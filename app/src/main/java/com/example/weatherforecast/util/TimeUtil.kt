@@ -19,3 +19,5 @@ fun String.timeAdapter(): String {
     else if (hour.toInt() > 12) "${hour.toInt() - 12}PM"
     else "${hour.toInt()}AM"
 }
+
+fun currentHour(): String = currentTime().split("T")[1].split(":")[0]

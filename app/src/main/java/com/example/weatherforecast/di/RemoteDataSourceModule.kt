@@ -1,5 +1,6 @@
 package com.example.weatherforecast.di
 
+import com.example.weatherforecast.data.remote.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,5 +30,11 @@ object RemoteDataSourceModule {
         .baseUrl(baseUrl)
         .addConverterFactory(gsonConverterFactory)
         .build()
+
+    @Singleton
+    @Provides
+    fun provideApiService(
+        retrofit: Retrofit
+    ): ApiService = retrofit.create(ApiService::class.java)
 
 }

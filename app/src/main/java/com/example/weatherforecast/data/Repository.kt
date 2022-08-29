@@ -3,6 +3,10 @@ package com.example.weatherforecast.data
 import android.location.Location
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
+import com.example.weatherforecast.util.ApiResponse
+import com.example.weatherforecast.util.dailyResponseAdapter
+import com.example.weatherforecast.util.hourlyResponseAdapter
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class Repository @Inject constructor(
@@ -14,5 +18,27 @@ class Repository @Inject constructor(
     private lateinit var dailyForecastCache: List<DailyWeatherForecast>
 
     suspend fun getCurrentLocation(): Location? = locationDataSource.getCurrentLocation()
+
+    suspend fun getForecast(
+        location: Location
+    ) = flow {
+        emit(ApiResponse.Loading)
+        try {
+            if (::hourlyForecastCache.isInitialized) {
+                emit(ApiResponse.Success)
+            } else {
+                val response = remoteDataSource.getForecast(location.latitude, location.longitude)
+                val body = response.body()
+                if (response.isSuccessful && body != null) {
+                    hourlyForecastCache = body.hourlyResponseAdapter()
+                    dailyForecastCache = body.dailyResponseAdapter()
+                    emit(ApiResponse.Success)
+                }
+            }
+        } catch (e: Exception) {
+            emit(ApiResponse.Failure(e.message))
+        }
+
+    }
 
 }

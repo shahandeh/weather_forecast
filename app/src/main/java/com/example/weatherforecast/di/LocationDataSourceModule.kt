@@ -1,10 +1,7 @@
 package com.example.weatherforecast.di
 
 import android.content.Context
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.Priority
+import com.google.android.gms.location.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,5 +26,9 @@ object LocationDataSourceModule {
         fastestInterval = 5000
         priority = Priority.PRIORITY_HIGH_ACCURACY
     }
+
+    @Singleton
+    @Provides
+    fun provideFusedLocationCallback(): LocationCallback = object : LocationCallback() {}
 
 }

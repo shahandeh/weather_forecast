@@ -53,4 +53,8 @@ class Repository @Inject constructor(
     fun weekForecast(): Flow<List<DailyWeatherForecast>> =
         flowOf(dailyForecastCache)
 
+    fun dayForecast(date: String): Flow<DailyWeatherForecast> = flowOf(
+        dailyForecastCache.first { it.date == date }
+    )
+
 }

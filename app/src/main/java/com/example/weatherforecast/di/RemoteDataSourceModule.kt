@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -13,5 +14,9 @@ object RemoteDataSourceModule {
     @Singleton
     @Provides
     fun provideBaseUrl(): String = "https://api.open-meteo.com/v1/"
+
+    @Singleton
+    @Provides
+    fun provideGsonConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
 }

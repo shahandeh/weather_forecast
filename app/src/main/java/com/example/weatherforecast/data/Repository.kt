@@ -50,4 +50,7 @@ class Repository @Inject constructor(
     fun currentDayHourlyForecast(): Flow<List<HourlyWeatherForecast>> =
         flowOf(hourlyForecastCache.subList(0, 24))
 
+    fun weekForecast(): Flow<List<DailyWeatherForecast>> =
+        flowOf(dailyForecastCache)
+
 }

@@ -9,11 +9,10 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(
     private val apiService: ApiService
 ): IRemoteDataSource {
+
     override suspend fun getForecast(
         latitude: Double,
         longitude: Double
-    ): Response<ForecastApiResponse> {
-        TODO("Not yet implemented")
-    }
+    ): Response<ForecastApiResponse> = apiService.getForecast(latitude, longitude)
 
 }

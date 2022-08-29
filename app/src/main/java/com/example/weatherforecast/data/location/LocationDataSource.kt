@@ -1,6 +1,7 @@
 package com.example.weatherforecast.data.location
 
 import android.app.Application
+import android.location.Location
 import com.example.weatherforecast.data.ILocationDataSource
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -12,5 +13,10 @@ class LocationDataSource @Inject constructor(
     private val locationRequest: LocationRequest,
     private val locationCallback: LocationCallback,
     private val application: Application
-) {
+) : ILocationDataSource {
+
+    override suspend fun getCurrentLocation(): Location? {
+        TODO("Not yet implemented")
+    }
+    
 }

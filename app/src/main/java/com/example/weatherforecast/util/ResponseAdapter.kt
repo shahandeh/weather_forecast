@@ -2,6 +2,7 @@ package com.example.weatherforecast.util
 
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.ForecastApiResponse
+import com.example.weatherforecast.data.model.HourlyWeatherForecast
 
 fun ForecastApiResponse.dailyResponseAdapter(): List<DailyWeatherForecast> {
     val dailyForecastList = this.daily
@@ -22,4 +23,26 @@ fun ForecastApiResponse.dailyResponseAdapter(): List<DailyWeatherForecast> {
         )
     }
     return dailyWeatherForecast
+}
+
+fun ForecastApiResponse.hourlyResponseAdapter(): List<HourlyWeatherForecast> {
+    val hourlyForecastList = this.hourly
+    val hourlyUnit = this.hourlyUnits
+    val hourlyWeatherForecast = mutableListOf<HourlyWeatherForecast>()
+    for (i in hourlyForecastList.time.indices){
+        hourlyWeatherForecast.add(
+            HourlyWeatherForecast(
+                dewPoint = hourlyForecastList.dewPoint[i].toString() + hourlyUnit.dewPoint,
+                directRadiation = hourlyForecastList.radiation[i].toString() + hourlyUnit.radiation,
+                precipitation = hourlyForecastList.precipitation[i].toString() + hourlyUnit.precipitation,
+                relativeHumidity = hourlyForecastList.relativeHumidity[i].toString() + hourlyUnit.relativeHumidity,
+                pressure = hourlyForecastList.pressure[i].toString() + hourlyUnit.pressure,
+                temperature = hourlyForecastList.temperature[i].toString() + hourlyUnit.temperature,
+                time = hourlyForecastList.time[i],
+                weatherCode = hourlyForecastList.weatherCode[i],
+                windSpeed = hourlyForecastList.windSpeed[i].toString() + hourlyUnit.windSpeed
+            )
+        )
+    }
+    return hourlyWeatherForecast
 }

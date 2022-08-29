@@ -4,9 +4,12 @@ import android.location.Location
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
 import com.example.weatherforecast.util.ApiResponse
+import com.example.weatherforecast.util.currentHour
 import com.example.weatherforecast.util.dailyResponseAdapter
 import com.example.weatherforecast.util.hourlyResponseAdapter
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
 
 class Repository @Inject constructor(
@@ -40,5 +43,8 @@ class Repository @Inject constructor(
         }
 
     }
+
+    fun currentHourForecast(): Flow<HourlyWeatherForecast> =
+        flowOf(hourlyForecastCache[currentHour().toInt()])
 
 }

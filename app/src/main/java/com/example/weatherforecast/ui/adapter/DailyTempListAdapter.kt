@@ -39,6 +39,10 @@ class DailyTempListAdapter(
             )
         )
 
+    override fun onBindViewHolder(holder: DailyTempViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
 }
 
 class DailyTempDiffCallback : DiffUtil.ItemCallback<DailyWeatherForecast>() {

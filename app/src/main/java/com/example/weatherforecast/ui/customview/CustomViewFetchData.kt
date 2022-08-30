@@ -48,4 +48,10 @@ class CustomViewFetchData(ctx: Context, attrs: AttributeSet) : ConstraintLayout(
         }
     }
 
+    fun tryAgain(fn: () -> Unit) {
+        binding.tryAgain.setOnClickListener {
+            fn()
+        }
+    }
+
 }

@@ -35,6 +35,12 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun listAdaptersInit() {
+        hourlyTempListAdapterInit()
+        dailyTempListAdapterInit()
+        dayListAdapterInit()
+    }
+
     private fun hourlyTempListAdapterInit() {
         hourlyTempListAdapter = HourlyTempListAdapter { setCurrentHourDetail(it) }
         binding.hourlyTempRecyclerView.adapter = hourlyTempListAdapter

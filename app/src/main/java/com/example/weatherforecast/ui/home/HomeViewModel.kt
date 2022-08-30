@@ -20,6 +20,13 @@ class HomeViewModel @Inject constructor(
     private val repository: Repository
 ): ViewModel() {
 
+    fun getCurrentLocation() {
+        viewModelScope.launch {
+            val location = repository.getCurrentLocation()
+            if (location != null) fetchDataFromApi(location)
+        }
+    }
+
     private var _apiResponse: MutableStateFlow<ApiResponse<out String>> =
         MutableStateFlow(ApiResponse.Loading)
     val apiResponse: StateFlow<ApiResponse<out String>> = _apiResponse

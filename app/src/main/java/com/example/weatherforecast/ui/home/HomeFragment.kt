@@ -56,6 +56,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 hourlyTempListAdapter.submitList(it)
             }
 
+            flowCollector(homeViewModel.weekForecast) {
+                dailyDetailInit(it)
+            }
+
         }
 
     }

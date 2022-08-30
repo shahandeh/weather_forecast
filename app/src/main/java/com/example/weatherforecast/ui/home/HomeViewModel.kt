@@ -20,6 +20,10 @@ class HomeViewModel @Inject constructor(
     private val repository: Repository
 ): ViewModel() {
 
+    init {
+        getCurrentLocation()
+    }
+
     fun getCurrentLocation() {
         viewModelScope.launch {
             val location = repository.getCurrentLocation()

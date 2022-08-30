@@ -1,6 +1,9 @@
 package com.example.weatherforecast.di
 
+import android.app.Application
 import android.content.Context
+import com.example.weatherforecast.data.ILocationDataSource
+import com.example.weatherforecast.data.location.LocationDataSource
 import com.google.android.gms.location.*
 import dagger.Module
 import dagger.Provides
@@ -30,5 +33,17 @@ object LocationDataSourceModule {
     @Singleton
     @Provides
     fun provideFusedLocationCallback(): LocationCallback = object : LocationCallback() {}
+
+    @Singleton
+    @Provides
+    fun provideLocationDataSource(
+        fusedLocationProviderClient: FusedLocationProviderClient,
+        locationRequest: LocationRequest,
+        locationCallback: LocationCallback,
+        application: Application
+    ): ILocationDataSource = LocationDataSource(
+        fusedLocationProviderClient, locationRequest,
+        locationCallback, application
+    )
 
 }

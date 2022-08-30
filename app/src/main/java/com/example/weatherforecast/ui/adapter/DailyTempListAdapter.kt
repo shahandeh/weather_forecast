@@ -1,7 +1,9 @@
 package com.example.weatherforecast.ui.adapter
 
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.databinding.ItemViewDailyTempBinding
+import com.example.weatherforecast.util.getWeatherImage
 
 class DailyTempListAdapter(
     private val fn: (time: String) -> Unit
@@ -9,6 +11,15 @@ class DailyTempListAdapter(
 
     inner class DailyTempViewHolder(private val binding: ItemViewDailyTempBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(dailyWeatherForecast: DailyWeatherForecast) {
+            binding.date.text = dailyWeatherForecast.date.split("T")[0]
+            binding.temp.text = dailyWeatherForecast.temperature
+            binding.image.getWeatherImage(dailyWeatherForecast.weatherCode)
+            binding.root.setOnClickListener {
+                fn(dailyWeatherForecast.date)
+            }
+        }
 
     }
 

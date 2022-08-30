@@ -37,4 +37,8 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding.windAmount.text = input
     }
 
+    fun uvIndex(input: String) {
+        binding.uvIndexAmount.text = input
+    }
+
 }

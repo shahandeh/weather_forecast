@@ -15,4 +15,14 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/weather_loading" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/fetch_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:text="@string/fetching_the_weather"
+        app:layout_constraintBottom_toBottomOf="@+id/lottie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

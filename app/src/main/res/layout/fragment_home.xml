@@ -5,4 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.home.HomeFragment">
 
+    <com.example.weatherforecast.ui.customview.CustomViewFetchData
+        android:id="@+id/fetch_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

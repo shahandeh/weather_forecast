@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.CustomViewCurrentHourTempBinding
+import com.example.weatherforecast.util.getWeatherImage
 
 class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
     ConstraintLayout(ctx, attrs) {
@@ -14,6 +15,10 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
     init {
         val view = inflate(ctx, R.layout.custom_view_current_hour_temp, this)
         binding = CustomViewCurrentHourTempBinding.bind(view)
+    }
+
+    fun setImage(weatherCode: Int, time: String) {
+        binding.image.getWeatherImage(weatherCode, time)
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.weatherforecast.ui.adapter
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +29,15 @@ class DayListAdapter(
         }
 
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DayViewHolder =
+        DayViewHolder(
+            ItemViewDailyDetailDayViewBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 }
 
 class DayDiffCallback : DiffUtil.ItemCallback<DailyWeatherForecast>() {

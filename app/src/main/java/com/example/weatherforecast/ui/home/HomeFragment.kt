@@ -20,7 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment: Fragment(R.layout.fragment_home) {
 
     private val homeViewModel by viewModels<HomeViewModel>()
-    private lateinit var binding: FragmentHomeBinding
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private lateinit var hourlyTempListAdapter: HourlyTempListAdapter
     private lateinit var dailyTempListAdapter: DailyTempListAdapter
     private lateinit var dayListAdapter: DayListAdapter
@@ -29,8 +30,8 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+    ): View{
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         listAdaptersInit()
         return binding.root
     }
@@ -66,6 +67,11 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         }
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun listAdaptersInit() {

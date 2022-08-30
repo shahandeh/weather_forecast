@@ -30,6 +30,14 @@
             android:layout_margin="2dp"
             tools:text="12" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            tools:text="2020" />
+
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

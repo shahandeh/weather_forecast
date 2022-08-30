@@ -1,6 +1,7 @@
 package com.example.weatherforecast.ui.adapter
 
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
 import com.example.weatherforecast.databinding.ItemViewHourlyTempBinding
@@ -9,7 +10,9 @@ import com.example.weatherforecast.util.timeAdapter
 
 class HourlyTempListAdapter(
     private val fn: (hourlyWeatherForecast: HourlyWeatherForecast) -> Unit
-) {
+) : ListAdapter<HourlyWeatherForecast, HourlyTempListAdapter.HourlyTempViewHolder>(
+        HourlyTempDiffCallback()
+    ) {
 
     inner class HourlyTempViewHolder(private val binding: ItemViewHourlyTempBinding) :
         RecyclerView.ViewHolder(binding.root) {

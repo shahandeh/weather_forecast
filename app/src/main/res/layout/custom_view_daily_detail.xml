@@ -27,6 +27,16 @@
             tools:itemCount="7"
             tools:listitem="@layout/item_view_daily_detail_day_view" />
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/hide_detail"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_hide_day_detail"
+            app:layout_constraintBottom_toBottomOf="@id/day_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/day_list" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

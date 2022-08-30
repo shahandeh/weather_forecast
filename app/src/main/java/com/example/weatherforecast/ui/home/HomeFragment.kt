@@ -30,4 +30,8 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun getDayForecast(date: String) {
+        homeViewModel.getDayForecast(date)
+    }
+
 }

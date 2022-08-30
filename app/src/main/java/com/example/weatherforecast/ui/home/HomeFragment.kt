@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherforecast.R
+import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.databinding.FragmentHomeBinding
 import com.example.weatherforecast.ui.adapter.DailyTempListAdapter
 import com.example.weatherforecast.ui.adapter.DayListAdapter
@@ -28,6 +29,19 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    private fun showDailyDetail(dailyWeatherForecast: DailyWeatherForecast) {
+        binding.dailyDetail.apply {
+            showDetail()
+            temp(dailyWeatherForecast.temperature)
+            weatherImage(dailyWeatherForecast.weatherCode)
+            precipitation(dailyWeatherForecast.precipitation)
+            wind(dailyWeatherForecast.windSpeed)
+            uvIndex(dailyWeatherForecast.shortwaveRadiation)
+            sunrise(dailyWeatherForecast.sunrise)
+            sunset(dailyWeatherForecast.sunset)
+        }
     }
 
     private fun getDayForecast(date: String) {

@@ -7,4 +7,13 @@
     app:cardCornerRadius="2dp"
     app:elevation="4dp">
 
+    <LinearLayout
+        android:id="@+id/child_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
 </com.google.android.material.card.MaterialCardView>

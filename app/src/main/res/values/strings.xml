@@ -10,4 +10,5 @@
     <string name="sunset">Sunset</string>
     <string name="fetching_the_weather">Fetching the weather</string>
     <string name="weather_forecast">WeatherForecast</string>
+    <string name="something_went_wrong_please_check_again_later">Something went wrong\nPlease check again later</string>
 </resources>

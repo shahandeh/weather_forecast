@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.CustomViewDailyDetailBinding
+import com.example.weatherforecast.util.getWeatherImage
 
 class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayout(ctx, attrs) {
 
@@ -22,6 +23,10 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
 
     fun temp(input: String) {
         binding.temp.text = input
+    }
+
+    fun weatherImage(weatherCode: Int) {
+        binding.weatherImage.getWeatherImage(weatherCode)
     }
 
 }

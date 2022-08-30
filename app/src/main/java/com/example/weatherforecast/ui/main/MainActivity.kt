@@ -7,6 +7,7 @@ import androidx.fragment.app.commit
 import androidx.navigation.fragment.NavHostFragment
 import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.ActivityMainBinding
+import com.example.weatherforecast.util.permissionHandler
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        permissionHandler(
+            permission,
+            { navHostFragmentInit() },
+            { finish() }
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

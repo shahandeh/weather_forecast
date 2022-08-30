@@ -25,4 +25,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.temp.text = input
     }
 
+    fun setWind(input: String) {
+        binding.wind.text = input
+    }
+
 }

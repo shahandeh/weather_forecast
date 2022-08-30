@@ -41,4 +41,8 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding.uvIndexAmount.text = input
     }
 
+    fun sunrise(input: String) {
+        binding.sunriseAmount.text = input
+    }
+
 }

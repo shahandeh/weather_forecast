@@ -21,4 +21,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.image.getWeatherImage(weatherCode, time)
     }
 
+    fun setTemp(input: String) {
+        binding.temp.text = input
+    }
+
 }

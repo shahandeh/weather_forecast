@@ -80,6 +80,17 @@
                 app:layout_constraintStart_toEndOf="@id/wind_linear_layout"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pressure" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/pressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    tools:text="1012hPa" />
 
             </LinearLayout>
 

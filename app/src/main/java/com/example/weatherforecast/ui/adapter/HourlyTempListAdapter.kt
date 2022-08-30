@@ -1,5 +1,6 @@
 package com.example.weatherforecast.ui.adapter
 
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
 import com.example.weatherforecast.databinding.ItemViewHourlyTempBinding
@@ -24,4 +25,16 @@ class HourlyTempListAdapter(
         }
 
     }
+}
+
+class HourlyTempDiffCallback : DiffUtil.ItemCallback<HourlyWeatherForecast>() {
+
+    override fun areItemsTheSame(oldItem: HourlyWeatherForecast, newItem: HourlyWeatherForecast) =
+        oldItem == newItem
+
+    override fun areContentsTheSame(
+        oldItem: HourlyWeatherForecast,
+        newItem: HourlyWeatherForecast
+    ) = oldItem == newItem
+
 }

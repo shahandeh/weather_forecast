@@ -38,6 +38,11 @@ class DayListAdapter(
                 false
             )
         )
+
+    override fun onBindViewHolder(holder: DayViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+
 }
 
 class DayDiffCallback : DiffUtil.ItemCallback<DailyWeatherForecast>() {

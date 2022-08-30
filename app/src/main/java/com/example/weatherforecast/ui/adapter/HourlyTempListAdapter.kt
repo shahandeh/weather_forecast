@@ -13,8 +13,8 @@ import com.example.weatherforecast.util.timeAdapter
 class HourlyTempListAdapter(
     private val fn: (hourlyWeatherForecast: HourlyWeatherForecast) -> Unit
 ) : ListAdapter<HourlyWeatherForecast, HourlyTempListAdapter.HourlyTempViewHolder>(
-        HourlyTempDiffCallback()
-    ) {
+    HourlyTempDiffCallback()
+) {
 
     inner class HourlyTempViewHolder(private val binding: ItemViewHourlyTempBinding) :
         RecyclerView.ViewHolder(binding.root) {

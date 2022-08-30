@@ -42,4 +42,10 @@ class CustomViewFetchData(ctx: Context, attrs: AttributeSet) : ConstraintLayout(
         }
     }
 
+    fun success() {
+        binding.apply {
+            lottie.pauseAnimation()
+        }
+    }
+
 }

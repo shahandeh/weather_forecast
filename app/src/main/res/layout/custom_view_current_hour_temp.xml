@@ -22,9 +22,25 @@
         android:layout_margin="8dp"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@id/detail_card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/image"
         tools:text="38 *C" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/detail_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/temp">
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,5 +10,6 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
 
     private var binding: CustomViewDailyDetailBinding
     private var dayList: RecyclerView
+    private var dayTempList: RecyclerView
 
 }

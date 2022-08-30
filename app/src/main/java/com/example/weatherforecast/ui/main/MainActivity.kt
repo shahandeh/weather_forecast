@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun navHostFragmentInit() {
         val host = NavHostFragment.create(R.navigation.navigation)
         supportFragmentManager.commit {
-            add(R.id.container, host)
+            replace(R.id.container, host)
             setPrimaryNavigationFragment(host)
         }
     }

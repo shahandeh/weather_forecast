@@ -168,6 +168,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_e" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/sunrise_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/sunrise"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sunrise"
+            tools:text="60:00" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

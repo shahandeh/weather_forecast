@@ -1,10 +1,12 @@
 package com.example.weatherforecast.ui.home
 
+import android.location.Location
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherforecast.data.Repository
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
+import com.example.weatherforecast.util.ApiResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,6 +19,18 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val repository: Repository
 ): ViewModel() {
+
+    private var _apiResponse: MutableStateFlow<ApiResponse<out String>> =
+        MutableStateFlow(ApiResponse.Loading)
+    val apiResponse: StateFlow<ApiResponse<out String>> = _apiResponse
+    private fun fetchDataFromApi(location: Location) {
+        viewModelScope.launch {
+            repository.getForecast(location).collect {
+                if (it == ApiResponse.Success) getData()
+                _apiResponse.emit(it)
+            }
+        }
+    }
 
     private fun getData() {
         getCurrentHourForecast()

@@ -33,6 +33,11 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun isFailure(message: String? = null) {
+        binding.fetchData.failure(message)
+        binding.fetchData.tryAgain { homeViewModel.getCurrentLocation() }
+    }
+
     private fun setCurrentHourDetail(it: HourlyWeatherForecast) {
         binding.currentHourDetail.apply {
             setTemp(it.temperature)

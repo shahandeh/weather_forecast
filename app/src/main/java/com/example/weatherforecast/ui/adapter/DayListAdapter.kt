@@ -1,13 +1,15 @@
 package com.example.weatherforecast.ui.adapter
 
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.databinding.ItemViewDailyDetailDayViewBinding
 
 class DayListAdapter(
     private val fn: (date: String) -> Unit
-) {
+) :
+    ListAdapter<DailyWeatherForecast, DayListAdapter.DayViewHolder>(DayDiffCallback()) {
 
     inner class DayViewHolder(private val binding: ItemViewDailyDetailDayViewBinding) :
         RecyclerView.ViewHolder(binding.root) {

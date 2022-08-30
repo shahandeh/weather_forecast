@@ -13,7 +13,9 @@ import com.example.weatherforecast.databinding.FragmentHomeBinding
 import com.example.weatherforecast.ui.adapter.DailyTempListAdapter
 import com.example.weatherforecast.ui.adapter.DayListAdapter
 import com.example.weatherforecast.ui.adapter.HourlyTempListAdapter
+import com.example.weatherforecast.util.gone
 import com.example.weatherforecast.util.timeAdapter
+import com.example.weatherforecast.util.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,6 +33,12 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View? {
         return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    private fun isSuccess() {
+        binding.fetchData.success()
+        binding.fetchData.gone()
+        binding.successLayout.visible()
     }
 
     private fun isFailure(message: String? = null) {

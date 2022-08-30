@@ -33,6 +33,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        listAdaptersInit()
         return binding.root
     }
 

@@ -178,6 +178,15 @@
             app:layout_constraintTop_toTopOf="@id/sunrise"
             tools:text="60:00" />
 
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_f"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sunrise" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

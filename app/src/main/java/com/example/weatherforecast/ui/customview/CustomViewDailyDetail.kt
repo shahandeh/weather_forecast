@@ -20,4 +20,8 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         dayTempList = binding.dailyTempList
     }
 
+    fun temp(input: String) {
+        binding.temp.text = input
+    }
+
 }

@@ -13,9 +13,7 @@ import com.example.weatherforecast.databinding.FragmentHomeBinding
 import com.example.weatherforecast.ui.adapter.DailyTempListAdapter
 import com.example.weatherforecast.ui.adapter.DayListAdapter
 import com.example.weatherforecast.ui.adapter.HourlyTempListAdapter
-import com.example.weatherforecast.util.gone
-import com.example.weatherforecast.util.timeAdapter
-import com.example.weatherforecast.util.visible
+import com.example.weatherforecast.util.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,6 +37,13 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        repeatOnLifecycleProvider {
+
+
+
+        }
+
     }
 
     private fun listAdaptersInit() {

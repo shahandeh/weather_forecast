@@ -171,6 +171,20 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/dew_point_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/precipitation_linear_layout"
+                app:layout_constraintStart_toStartOf="@id/precipitation_linear_layout"
+                app:layout_constraintTop_toBottomOf="@id/precipitation_linear_layout">
+
+
+            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

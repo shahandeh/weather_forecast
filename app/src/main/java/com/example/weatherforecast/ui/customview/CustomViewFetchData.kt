@@ -29,5 +29,17 @@ class CustomViewFetchData(ctx: Context, attrs: AttributeSet) : ConstraintLayout(
         }
     }
 
+    fun failure(input: String? = null) {
+        binding.apply {
+            lottie.pauseAnimation()
+            lottie.gone()
+            fetchMessage.gone()
+            appName.gone()
+            failureMessage.visible()
+            failureMessage.text = input
+            failureNote.visible()
+            tryAgain.visible()
+        }
+    }
 
 }

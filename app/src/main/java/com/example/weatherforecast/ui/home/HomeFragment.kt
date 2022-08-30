@@ -35,6 +35,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun isLoading() {
+        binding.fetchData.fetching()
+    }
+
     private fun isSuccess() {
         binding.fetchData.success()
         binding.fetchData.gone()

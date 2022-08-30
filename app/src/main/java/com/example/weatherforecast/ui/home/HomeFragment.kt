@@ -35,6 +35,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun dailyTempListAdapterInit() {
+        dailyTempListAdapter = DailyTempListAdapter { getDayForecast(it) }
+    }
+
     private fun dayListAdapterInit() {
         dayListAdapter = DayListAdapter { getDayForecast(it) }
     }

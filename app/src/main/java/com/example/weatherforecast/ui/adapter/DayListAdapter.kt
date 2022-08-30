@@ -1,5 +1,6 @@
 package com.example.weatherforecast.ui.adapter
 
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.databinding.ItemViewDailyDetailDayViewBinding
@@ -24,4 +25,14 @@ class DayListAdapter(
         }
 
     }
+}
+
+class DayDiffCallback : DiffUtil.ItemCallback<DailyWeatherForecast>() {
+
+    override fun areItemsTheSame(oldItem: DailyWeatherForecast, newItem: DailyWeatherForecast) =
+        oldItem == newItem
+
+    override fun areContentsTheSame(oldItem: DailyWeatherForecast, newItem: DailyWeatherForecast) =
+        oldItem == newItem
+
 }

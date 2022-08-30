@@ -3,6 +3,7 @@ package com.example.weatherforecast.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherforecast.data.Repository
+import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -35,6 +36,17 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             repository.currentDayHourlyForecast().collect {
                 _currentDayHourlyForecast.emit(it)
+            }
+        }
+    }
+
+    private var _weekForecast: MutableStateFlow<List<DailyWeatherForecast>> =
+        MutableStateFlow(emptyList())
+    val weekForecast: StateFlow<List<DailyWeatherForecast>> = _weekForecast
+    private fun getWeekForecast(){
+        viewModelScope.launch {
+            repository.weekForecast().collect{
+                _weekForecast.emit(it)
             }
         }
     }

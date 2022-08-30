@@ -56,4 +56,9 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding.dailyTempList.visible()
     }
 
+    fun showDetail() {
+        binding.detailLayout.visible()
+        binding.dailyTempList.gone()
+    }
+
 }

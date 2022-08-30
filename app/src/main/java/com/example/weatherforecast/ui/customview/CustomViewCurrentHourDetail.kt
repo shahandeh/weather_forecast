@@ -45,4 +45,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.uvIndex.text = input
     }
 
+    fun setDewPoint(input: String) {
+        binding.dewPoint.text = input
+    }
+
 }

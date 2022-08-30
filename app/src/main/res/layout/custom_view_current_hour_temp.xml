@@ -182,6 +182,17 @@
                 app:layout_constraintStart_toStartOf="@id/precipitation_linear_layout"
                 app:layout_constraintTop_toBottomOf="@id/precipitation_linear_layout">
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dew_point" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/dew_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    tools:text="-1C" />
 
             </LinearLayout>
 

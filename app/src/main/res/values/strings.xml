@@ -5,4 +5,5 @@
     <string name="humidity">Humidity:</string>
     <string name="precipitation">Precipitation:</string>
     <string name="uv_index">UV Index:</string>
+    <string name="dew_point">Dew Point:</string>
 </resources>

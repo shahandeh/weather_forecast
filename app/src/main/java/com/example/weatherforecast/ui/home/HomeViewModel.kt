@@ -18,7 +18,11 @@ class HomeViewModel @Inject constructor(
     private val repository: Repository
 ): ViewModel() {
 
-
+    private fun getData() {
+        getCurrentHourForecast()
+        getCurrentDayHourlyForecast()
+        getWeekForecast()
+    }
 
     private var _currentHourForecast: MutableStateFlow<HourlyWeatherForecast?> =
         MutableStateFlow(null)

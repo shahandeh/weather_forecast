@@ -37,4 +37,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.humidity.text = input
     }
 
+    fun setPrecipitation(input: String) {
+        binding.precipitation.text = input
+    }
+
 }

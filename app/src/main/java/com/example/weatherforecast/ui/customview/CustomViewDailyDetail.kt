@@ -21,6 +21,9 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding = CustomViewDailyDetailBinding.bind(view)
         dayList = binding.dayList
         dayTempList = binding.dailyTempList
+        binding.hideDetail.setOnClickListener {
+            hideDetail()
+        }
     }
 
     fun temp(input: String) {

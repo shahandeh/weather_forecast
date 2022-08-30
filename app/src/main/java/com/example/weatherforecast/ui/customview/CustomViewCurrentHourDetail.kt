@@ -41,4 +41,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.precipitation.text = input
     }
 
+    fun setUvIndex(input: String) {
+        binding.uvIndex.text = input
+    }
+
 }

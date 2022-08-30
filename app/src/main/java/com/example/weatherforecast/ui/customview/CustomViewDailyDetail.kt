@@ -63,4 +63,6 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
 
     fun dayListRecyclerView(): RecyclerView = dayList
 
+    fun dayTempListRecyclerView(): RecyclerView = dayTempList
+
 }

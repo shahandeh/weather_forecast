@@ -14,4 +14,13 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Mon Aug 15" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/date"
+        app:layout_constraintTop_toTopOf="@id/date"
+        tools:text="38/29C" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

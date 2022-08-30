@@ -60,6 +60,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 dailyDetailInit(it)
             }
 
+            flowCollector(homeViewModel.dayForecast) {
+                showDailyDetail(it)
+            }
+
         }
 
     }

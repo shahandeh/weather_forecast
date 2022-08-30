@@ -1,5 +1,9 @@
 package com.example.weatherforecast.ui.home
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherforecast.R
@@ -17,5 +21,13 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
     private lateinit var hourlyTempListAdapter: HourlyTempListAdapter
     private lateinit var dailyTempListAdapter: DailyTempListAdapter
     private lateinit var dayListAdapter: DayListAdapter
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
 
 }

@@ -40,7 +40,13 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
 
         repeatOnLifecycleProvider {
 
-
+            flowCollector(homeViewModel.apiResponse){ apiResponse ->
+                apiResponse.apiResponseHandler(
+                    { isLoading() },
+                    { isSuccess() },
+                    { isFailure(it) }
+                )
+            }
 
         }
 

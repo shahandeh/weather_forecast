@@ -29,4 +29,8 @@ class CustomViewCurrentHourDetail(ctx: Context, attrs: AttributeSet) :
         binding.wind.text = input
     }
 
+    fun setPressure(input: String) {
+        binding.pressure.text = input
+    }
+
 }

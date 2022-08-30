@@ -150,6 +150,15 @@
             app:layout_constraintTop_toTopOf="@id/uv_index"
             tools:text="10.4" />
 
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_e"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uv_index" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

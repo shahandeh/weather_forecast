@@ -29,4 +29,8 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding.weatherImage.getWeatherImage(weatherCode)
     }
 
+    fun precipitation(input: String) {
+        binding.precipitationAmount.text = input
+    }
+
 }

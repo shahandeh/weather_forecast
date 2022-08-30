@@ -1,5 +1,7 @@
 package com.example.weatherforecast.di
 
+import com.example.weatherforecast.data.IRemoteDataSource
+import com.example.weatherforecast.data.remote.RemoteDataSource
 import com.example.weatherforecast.data.remote.service.ApiService
 import dagger.Module
 import dagger.Provides
@@ -36,5 +38,11 @@ object RemoteDataSourceModule {
     fun provideApiService(
         retrofit: Retrofit
     ): ApiService = retrofit.create(ApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideIRemoteDataSource(
+        apiService: ApiService
+    ): IRemoteDataSource = RemoteDataSource(apiService)
 
 }

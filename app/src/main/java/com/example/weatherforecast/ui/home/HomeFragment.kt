@@ -52,6 +52,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 setCurrentHourDetail(it)
             }
 
+            flowCollector(homeViewModel.currentDayHourlyForecast) {
+                hourlyTempListAdapter.submitList(it)
+            }
+
         }
 
     }

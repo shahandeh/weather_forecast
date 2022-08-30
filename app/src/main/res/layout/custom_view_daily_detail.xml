@@ -52,6 +52,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider_b"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider_a" />
 
@@ -64,6 +65,15 @@
             app:layout_constraintEnd_toStartOf="@id/weather_image"
             app:layout_constraintTop_toTopOf="@id/weather_image"
             tools:text="38/31C" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_b"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weather_image" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

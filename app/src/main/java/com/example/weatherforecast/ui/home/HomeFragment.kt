@@ -48,6 +48,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 )
             }
 
+            flowCollector(homeViewModel.currentHourForecast) {
+                setCurrentHourDetail(it)
+            }
+
         }
 
     }

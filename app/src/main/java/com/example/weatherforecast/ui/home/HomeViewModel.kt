@@ -6,7 +6,9 @@ import com.example.weatherforecast.data.Repository
 import com.example.weatherforecast.data.model.DailyWeatherForecast
 import com.example.weatherforecast.data.model.HourlyWeatherForecast
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -47,6 +49,16 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             repository.weekForecast().collect{
                 _weekForecast.emit(it)
+            }
+        }
+    }
+
+    private var _dayForecast: MutableSharedFlow<DailyWeatherForecast> = MutableSharedFlow()
+    val dayForecast: SharedFlow<DailyWeatherForecast> = _dayForecast
+    fun getDayForecast(date: String){
+        viewModelScope.launch {
+            repository.dayForecast(date).collect{
+                _dayForecast.emit(it)
             }
         }
     }

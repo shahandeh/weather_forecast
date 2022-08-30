@@ -31,6 +31,14 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
+    private fun dailyDetailInit(dailyWeatherForecastList: List<DailyWeatherForecast>) {
+        binding.dailyDetail.dayListRecyclerView().adapter = dayListAdapter
+        dayListAdapter.submitList(dailyWeatherForecastList)
+
+        binding.dailyDetail.dayTempListRecyclerView().adapter = dailyTempListAdapter
+        dailyTempListAdapter.submitList(dailyWeatherForecastList)
+    }
+
     private fun showDailyDetail(dailyWeatherForecast: DailyWeatherForecast) {
         binding.dailyDetail.apply {
             showDetail()

@@ -28,4 +28,15 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    private var _currentDayHourlyForecast: MutableStateFlow<List<HourlyWeatherForecast>> =
+        MutableStateFlow(emptyList())
+    val currentDayHourlyForecast: StateFlow<List<HourlyWeatherForecast>> = _currentDayHourlyForecast
+    private fun getCurrentDayHourlyForecast(){
+        viewModelScope.launch {
+            repository.currentDayHourlyForecast().collect {
+                _currentDayHourlyForecast.emit(it)
+            }
+        }
+    }
+
 }

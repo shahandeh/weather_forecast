@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecast.R
 import com.example.weatherforecast.databinding.CustomViewDailyDetailBinding
 import com.example.weatherforecast.util.getWeatherImage
+import com.example.weatherforecast.util.gone
+import com.example.weatherforecast.util.visible
 
 class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayout(ctx, attrs) {
 
@@ -47,6 +49,11 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
 
     fun sunset(input: String) {
         binding.sunsetAmount.text = input
+    }
+
+    private fun hideDetail() {
+        binding.detailLayout.gone()
+        binding.dailyTempList.visible()
     }
 
 }

@@ -33,4 +33,8 @@ class CustomViewDailyDetail(ctx: Context, attrs: AttributeSet) : ConstraintLayou
         binding.precipitationAmount.text = input
     }
 
+    fun wind(input: String) {
+        binding.windAmount.text = input
+    }
+
 }

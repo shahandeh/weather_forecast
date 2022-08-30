@@ -84,6 +84,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider_b" />
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/precipitation_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/precipitation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/precipitation"
+            tools:text="0.0mm" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
